@@ -11,6 +11,7 @@ import java.util.*;
 public class TextMessagePart {
 	private String text = "";
 	private Color color = Color.WHITE;
+	private String hexColor = "";
 	private Set<Format> formatting = EnumSet.noneOf(Format.class);
 
 	/**
@@ -58,6 +59,23 @@ public class TextMessagePart {
 		this.color = color;
 		return this;
 	}
+
+
+	/**
+	 * Set the hex color value
+	 * @param hexValue hex value of the color (ex: #001021)
+	 * @return this
+	 */
+	public TextMessagePart setHexValue(final String hexValue) {
+		this.hexColor = hexValue;
+		return this;
+	}
+
+
+	public String getHexColor(){
+		return this.hexColor;
+	}
+
 
 	/**
 	 * Get the color
@@ -111,7 +129,12 @@ public class TextMessagePart {
 	public String toString() {
 		StringBuilder result = new StringBuilder("TextMessagePart(text:"+text);
 		if(color != Color.WHITE) {
-			result.append(", color:").append(color);
+			result.append(", color:");
+			if (color != Color.HEX) {
+				result.append(color);
+			} else {
+				result.append("#").append(getHexColor());
+			}
 		}
 		if(!formatting.isEmpty()) {
 			result.append(", formatting:").append(formatting);

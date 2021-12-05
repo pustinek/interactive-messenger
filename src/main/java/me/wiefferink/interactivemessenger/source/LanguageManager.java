@@ -4,7 +4,13 @@ import com.google.common.base.Charsets;
 import me.wiefferink.interactivemessenger.Log;
 import me.wiefferink.interactivemessenger.processing.Message;
 import me.wiefferink.interactivemessenger.translation.Transifex;
+
+import net.md_5.bungee.config.Configuration;
+import net.md_5.bungee.config.ConfigurationProvider;
 import org.apache.commons.lang.exception.ExceptionUtils;
+
+
+import net.md_5.bungee.api.plugin.Plugin;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,11 +32,26 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class LanguageManager implements MessageProvider {
-	private JavaPlugin plugin;
+	private Object plugin;
 	private Map<String, List<String>> currentLanguage, defaultLanguage;
 	private File languageFolder;
 	private String jarLanguagePath;
 	private List<String> chatPrefix;
+
+
+	public static boolean isBungee = false;
+
+	public static boolean isPresent(String className) {
+		try {
+			Class<?> aClass = Class.forName(className);
+
+		} catch (Exception e) {
+			return false;
+		}
+
+
+		return true;
+	}
 
 	/**
 	 * Constructor
@@ -40,13 +61,21 @@ public class LanguageManager implements MessageProvider {
 	 * @param defaultLanguageName The name of the language that
 	 * @param chatPrefix The chat prefix for Message#prefix()
 	 */
-	public LanguageManager(JavaPlugin plugin, String jarLanguagePath, String currentLanguageName, String defaultLanguageName, List<String> chatPrefix) {
+	public LanguageManager(Object plugin, String jarLanguagePath, String currentLanguageName, String defaultLanguageName, List<String> chatPrefix) {
 		this.plugin = plugin;
 		this.jarLanguagePath = jarLanguagePath;
 		this.chatPrefix = chatPrefix;
-		this.languageFolder = new File(plugin.getDataFolder() + File.separator + jarLanguagePath);
 
-		Message.init(this, plugin.getLogger());
+		if(isPresent("org.bukkit.plugin.java.JavaPlugin")){
+			isBungee = false;
+			this.languageFolder = new File(((JavaPlugin) plugin).getDataFolder() + File.separator + jarLanguagePath);
+			Message.init(this, ((JavaPlugin) plugin).getLogger());
+		}else{
+			isBungee = true;
+			this.languageFolder = new File(((Plugin) plugin).getDataFolder() + File.separator + jarLanguagePath);
+			Message.init(this, ((Plugin) plugin).getLogger());
+		}
+
 		saveDefaults();
 		currentLanguage = loadLanguage(currentLanguageName);
 		if(defaultLanguageName.equals(currentLanguageName)) {
@@ -54,7 +83,13 @@ public class LanguageManager implements MessageProvider {
 		} else {
 			defaultLanguage = loadLanguage(defaultLanguageName);
 		}
+
 	}
+
+
+
+
+
 
 	/**
 	 * Get the message for a certain key (result can be modified)
@@ -151,23 +186,41 @@ public class LanguageManager implements MessageProvider {
 				InputStreamReader reader = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8)
 		) {
 			// Detect empty language files, happens when the YAML parsers prints an exception (it does return an empty YamlConfiguration though)
-			YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(reader);
-			if(ymlFile.getKeys(false).isEmpty()) {
-				Log.warn("Language file " + key + ".yml has zero messages.");
-				return result;
-			}
 
-			// Retrieve the messages from the YAML file and create the result
-			if(!convert || !Transifex.needsConversion(ymlFile)) {
-				for(String messageKey : ymlFile.getKeys(false)) {
-					if(ymlFile.isList(messageKey)) {
-						result.put(messageKey, new ArrayList<>(ymlFile.getStringList(messageKey)));
+			if(isPresent("org.bukkit.configuration.file.YamlConfiguration")){
+				YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(reader);
+				if(ymlFile.getKeys(false).isEmpty()) {
+					Log.warn("Language file " + key + ".yml has zero messages.");
+					return result;
+				}
+
+				// Retrieve the messages from the YAML file and create the result
+				if(!convert || !Transifex.needsConversion(ymlFile)) {
+					for(String messageKey : ymlFile.getKeys(false)) {
+						if(ymlFile.isList(messageKey)) {
+							result.put(messageKey, new ArrayList<>(ymlFile.getStringList(messageKey)));
+						} else {
+							result.put(messageKey, new ArrayList<>(Collections.singletonList(ymlFile.getString(messageKey))));
+						}
+					}
+				} else {
+					convertFromTransifex = true;
+				}
+			}else{
+				// Is bungeecord
+				Configuration configuration = ConfigurationProvider.getProvider(net.md_5.bungee.config.YamlConfiguration.class).load(reader);
+				if(configuration.getKeys().isEmpty()) {
+					Log.warn("Language file " + key + ".yml has zero messages.");
+					return result;
+				}
+				//TODO:  transifex support for Bungeecord
+				for(String messageKey : configuration.getKeys()) {
+					if(configuration.getStringList(messageKey).isEmpty()) {
+						result.put(messageKey, new ArrayList<>(configuration.getStringList(messageKey)));
 					} else {
-						result.put(messageKey, new ArrayList<>(Collections.singletonList(ymlFile.getString(messageKey))));
+						result.put(messageKey, new ArrayList<>(Collections.singletonList(configuration.getString(messageKey))));
 					}
 				}
-			} else {
-				convertFromTransifex = true;
 			}
 		} catch(IOException e) {
 			Log.warn("Could not load language file: " + file.getAbsolutePath());

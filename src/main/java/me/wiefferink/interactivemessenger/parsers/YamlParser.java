@@ -1,5 +1,7 @@
 package me.wiefferink.interactivemessenger.parsers;
 
+import com.sun.org.apache.bcel.internal.generic.ACONST_NULL;
+import com.sun.org.apache.bcel.internal.generic.DCONST;
 import me.wiefferink.interactivemessenger.generators.ConsoleGenerator;
 import me.wiefferink.interactivemessenger.message.InteractiveMessage;
 import me.wiefferink.interactivemessenger.message.InteractiveMessagePart;
@@ -26,8 +28,8 @@ public class YamlParser {
 
 	public static final char ESCAPE_CHAR = '\\';
 	public static final char SIMPLE_FORMAT_RESET_CHAR = 'r';
-    public static final Pattern tagPattern = Pattern.compile("(\\[[/a-zA-Z1-9_]+?\\])|([&" + Pattern.quote(ChatColor.COLOR_CHAR + "") + "][0-9a-zA-Z])|(\\\\n)");
-
+    public static final Pattern tagPattern = Pattern.compile("(\\[[/a-zA-Z1-9_]+?])|([&" + Pattern.quote(ChatColor.COLOR_CHAR + "") + "][0-9a-zA-Z])|\\[#([0-9a-fA-F]{6})]|(\\\\n)");
+	public static final Pattern RGB_PATTERN = Pattern.compile("(&)?#([0-9a-fA-F]{6})");
 	// Lookup table for all continuous enums ([<tag>])
 	private static final HashMap<String, Object> BRACKET_TAGS = new HashMap<String, Object>() {{
 		// Colors
@@ -71,6 +73,7 @@ public class YamlParser {
 		put("d", Color.LIGHT_PURPLE);
 		put("e", Color.YELLOW);
 		put("f", Color.WHITE);
+		put("#", Color.HEX);
 
 		put("l", Format.BOLD);
 		put("m", Format.STRIKETHROUGH);
@@ -110,6 +113,7 @@ public class YamlParser {
 		InteractiveMessage message = new InteractiveMessage();
 
 		Color currentColor = Color.WHITE;
+		String hexColor = null;
 		Set<Format> currentFormatting = EnumSet.noneOf(Format.class);
 
 		lineLoop:
@@ -175,14 +179,19 @@ public class YamlParser {
 					} else {
 						textToAdd = nextTag.precedingContent;
 						line = nextTag.subsequentContent;
+
 					}
 
+
+
+					TextMessagePart part = null;
 					// Add a text part with the correct formatting
 					if(!textToAdd.isEmpty()) {
-						TextMessagePart part = new TextMessagePart()
+						      part = new TextMessagePart()
 								.text(unescape(textToAdd))
 								.format(currentLineFormatting)
-								.color(currentLineColor);
+								.color(currentLineColor)
+									  .setHexValue(hexColor);
 						targetList.add(part);
 					}
 
@@ -190,8 +199,16 @@ public class YamlParser {
 					if(tagged) {
 						// Handle the formatting tag
 						Object tag = nextTag.tag;
+
 						if(tag instanceof Color) {
 							currentLineColor = (Color)tag;
+
+
+							// Set HEX color for the line
+							if(currentLineColor == Color.HEX){
+								hexColor = nextTag.content;
+							}
+
 						} else if(tag instanceof Format) {
 							if(nextTag.closing) {
 								currentLineFormatting.remove(tag);
@@ -304,14 +321,20 @@ public class YamlParser {
             // Process the found match
             boolean closing = false;
 			Object tag;
+			String content = null;
+
             if (matcher.group().equals("\\n")) {
                 tag = Control.BREAK;
             } else if (matcher.group().startsWith("&") || matcher.group().startsWith(ChatColor.COLOR_CHAR + "")) {
 				tag = NATIVE_TAGS.get(matcher.group().charAt(1)+"".toLowerCase());
-			} else {
-				String content = matcher.group().substring(1, matcher.group().length()-1).toLowerCase();
-				tag = BRACKET_TAGS.get(content);
+			}else {
+            	content = matcher.group().substring(1, matcher.group().length()-1).toLowerCase();
 
+            	if(content.startsWith("#")) {
+					tag = Color.HEX;
+				}else {
+					tag = BRACKET_TAGS.get(content);
+				}
 				// Try closing tag
 				if(tag == null && content.length() > 0 && content.charAt(0) == '/') {
 					tag = BRACKET_TAGS.get(content.substring(1));
@@ -325,7 +348,7 @@ public class YamlParser {
 
 			// Continue search if we found something like [abc] or &w that is not a tag
 			if(tag != null) {
-				return new TaggedContent(line.substring(0, matcher.start()), tag, line.substring(matcher.end()), closing);
+				return new TaggedContent(line.substring(0, matcher.start()), tag,content, line.substring(matcher.end()), closing);
 			}
 		}
 		return null;
@@ -349,7 +372,7 @@ public class YamlParser {
 					if(INTERACTIVE_TAGS.containsKey(inBetween)) {
 						Object tag = INTERACTIVE_TAGS.get(inBetween);
 						String subsequentContent = line.substring(end+2);
-						return new TaggedContent(null, tag, subsequentContent, false);
+						return new TaggedContent(null, tag,null, subsequentContent, false);
 					}
 				}
 				return null;
@@ -429,19 +452,23 @@ public class YamlParser {
 	 */
 	private static class TaggedContent {
 		final String precedingContent;
+		final String content;
 		final Object tag;
 		final boolean closing;
 		final String subsequentContent;
+
 
 		/**
 		 * Constructor
 		 * @param pre Content that appeared before the tag
 		 * @param tag The Tag that has been found (formatting or control)
+		 * @param content Content found between teh tags
 		 * @param sub Content found after the tag
 		 */
-		public TaggedContent(String pre, Object tag, String sub, boolean closing) {
+		public TaggedContent(String pre, Object tag,String content, String sub, boolean closing) {
 			this.precedingContent = pre;
 			this.tag = tag;
+			this.content = content;
 			this.subsequentContent = sub;
 			this.closing = closing;
 		}

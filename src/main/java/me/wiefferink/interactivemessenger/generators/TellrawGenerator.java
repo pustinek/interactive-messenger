@@ -233,7 +233,12 @@ public class TellrawGenerator {
 		// Color
 		if(part.getColor() != Color.WHITE) {
 			sb.append(",\"color\":\"");
-			sb.append(part.getColor().name().toLowerCase());
+			if (part.getColor() == Color.HEX) {
+				sb.append(part.getHexColor());
+			}else{
+				sb.append(part.getColor().name().toLowerCase());
+			}
+
 			sb.append("\"");
 		}
 

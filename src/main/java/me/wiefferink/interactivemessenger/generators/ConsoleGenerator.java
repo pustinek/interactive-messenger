@@ -5,7 +5,8 @@ import me.wiefferink.interactivemessenger.message.InteractiveMessagePart;
 import me.wiefferink.interactivemessenger.message.TextMessagePart;
 import me.wiefferink.interactivemessenger.message.enums.Color;
 import me.wiefferink.interactivemessenger.message.enums.Format;
-import org.bukkit.ChatColor;
+
+import net.md_5.bungee.api.ChatColor;
 
 import java.util.EnumMap;
 import java.util.EnumSet;
@@ -71,7 +72,14 @@ public class ConsoleGenerator {
 
 				// Color
 				if(activeColor != textPart.getColor()) {
-					result.append(ChatColor.COLOR_CHAR).append(colorCode.get(textPart.getColor()));
+
+					if(textPart.getColor() == Color.HEX){
+						result.append(ChatColor.of(textPart.getHexColor()));
+					}else{
+						result.append(ChatColor.COLOR_CHAR).append(colorCode.get(textPart.getColor()));
+					}
+
+
 					activeColor = textPart.getColor();
 				}
 

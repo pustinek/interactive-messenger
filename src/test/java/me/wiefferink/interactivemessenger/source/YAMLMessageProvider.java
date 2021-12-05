@@ -2,6 +2,8 @@ package me.wiefferink.interactivemessenger.source;
 
 import com.google.common.base.Charsets;
 import me.wiefferink.interactivemessenger.Log;
+import net.md_5.bungee.config.Configuration;
+import net.md_5.bungee.config.ConfigurationProvider;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -51,19 +53,36 @@ public class YAMLMessageProvider implements MessageProvider {
 		try(
 				InputStreamReader reader = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8)
 		) {
-			// Detect staticEmpty language files, happens when the YAML parsers prints an exception (it does return an staticEmpty YamlConfiguration though)
-			YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(reader);
-			if(ymlFile.getKeys(false).isEmpty()) {
-				Log.warn("Language file has zero messages:", file.getAbsolutePath());
-				return result;
-			}
 
-			// Retrieve the messages from the YAML file and create the result
-			for(String messageKey : ymlFile.getKeys(false)) {
-				if(ymlFile.isList(messageKey)) {
-					result.put(messageKey, new ArrayList<>(ymlFile.getStringList(messageKey)));
-				} else {
-					result.put(messageKey, new ArrayList<>(Collections.singletonList(ymlFile.getString(messageKey))));
+
+			if(LanguageManager.isPresent("org.bukkit.configuration.file.YamlConfiguration")){
+				YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(reader);
+				if(ymlFile.getKeys(false).isEmpty()) {
+					Log.warn("Language file has zero messages:", file.getAbsolutePath());
+					return result;
+				}
+				for(String messageKey : ymlFile.getKeys(false)) {
+					if(ymlFile.isList(messageKey)) {
+						result.put(messageKey, new ArrayList<>(ymlFile.getStringList(messageKey)));
+					} else {
+						result.put(messageKey, new ArrayList<>(Collections.singletonList(ymlFile.getString(messageKey))));
+					}
+				}
+
+			}else{
+				// Is bungeecord
+				Configuration configuration = ConfigurationProvider.getProvider(net.md_5.bungee.config.YamlConfiguration.class).load(reader);
+				if(configuration.getKeys().isEmpty()) {
+					Log.warn("Language file has zero messages:", file.getAbsolutePath());
+					return result;
+				}
+
+				for(String messageKey : configuration.getKeys()) {
+					if(configuration.getStringList(messageKey).isEmpty()) {
+						result.put(messageKey, new ArrayList<>(configuration.getStringList(messageKey)));
+					} else {
+						result.put(messageKey, new ArrayList<>(Collections.singletonList(configuration.getString(messageKey))));
+					}
 				}
 			}
 		} catch(IOException e) {

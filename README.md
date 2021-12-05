@@ -103,3 +103,5 @@ The plugin [AreaShop](https://github.com/NLthijs48/AreaShop) is using this libra
 * **[AreaShop](https://github.com/NLthijs48/AreaShop/blob/master/AreaShop/src/main/java/me/wiefferink/areashop/AreaShop.java).message** method used to send messages, could also be done by using `Message.from()` directly.
 * **[/lang](https://github.com/NLthijs48/AreaShop/tree/master/AreaShop/src/main/resources/lang)**: folder with the language files.
 
+## Developer
+How to deploy to maven (pustinek)

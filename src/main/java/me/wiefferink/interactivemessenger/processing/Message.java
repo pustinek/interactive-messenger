@@ -1,15 +1,19 @@
 package me.wiefferink.interactivemessenger.processing;
 
 import me.wiefferink.interactivemessenger.Log;
+import me.wiefferink.interactivemessenger.generators.BaseMessageGenerator;
 import me.wiefferink.interactivemessenger.generators.ConsoleGenerator;
 import me.wiefferink.interactivemessenger.generators.TellrawGenerator;
 import me.wiefferink.interactivemessenger.parsers.YamlParser;
+import me.wiefferink.interactivemessenger.source.LanguageManager;
 import me.wiefferink.interactivemessenger.source.MessageProvider;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
+
+import net.md_5.bungee.api.connection.ProxiedPlayer;
 import org.bukkit.entity.Player;
 
 import java.io.BufferedWriter;
@@ -22,6 +26,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Message {
+
+
 
 	// CONFIGURATION
 	private static boolean useInteractiveMessages = true;
@@ -84,9 +90,10 @@ public class Message {
 	/**
 	 * Internal use only
 	 */
-	private Message() {
+	public Message() {
 		message = new ArrayList<>();
 	}
+
 
 	/**
 	 * Empty message object
@@ -337,52 +344,61 @@ public class Message {
 			return this;
 		}
 		doReplacements();
-		if(target instanceof Player) {
-			boolean sendPlain = true;
-			if(useInteractiveMessages && fancyWorks) {
-				try {
-					boolean result = true;
-					List<String> jsonMessages = TellrawGenerator.generate(YamlParser.parse(message));
-					for(String jsonMessage : jsonMessages) {
-						if(jsonMessage.length() > MAXIMUMJSONLENGTH) {
-							Log.error("Message with key", key, "could not be send, results in a JSON string that is too big to send to the client, start of the message:", getMessageStart(this, 200));
-							return this;
+		String plainMessage;
+		if(!LanguageManager.isBungee){
+			if(target instanceof Player) {
+				boolean sendPlain = true;
+				if(useInteractiveMessages && fancyWorks) {
+					try {
+						boolean result = true;
+						List<String> jsonMessages = TellrawGenerator.generate(YamlParser.parse(message));
+						for(String jsonMessage : jsonMessages) {
+							if(jsonMessage.length() > MAXIMUMJSONLENGTH) {
+								Log.error("Message with key", key, "could not be send, results in a JSON string that is too big to send to the client, start of the message:", getMessageStart(this, 200));
+								return this;
+							}
+							result &= Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw "+((Player)target).getName()+" "+jsonMessage);
 						}
-						result &= Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw "+((Player)target).getName()+" "+jsonMessage);
+						sendPlain = !result;
+						fancyWorks = result;
+					} catch(Exception e) {
+						fancyWorks = false;
+						Log.error("Sending fancy message did not work, falling back to plain messages. Message key:", key, ", error:", ExceptionUtils.getStackTrace(e));
 					}
-					sendPlain = !result;
-					fancyWorks = result;
-				} catch(Exception e) {
-					fancyWorks = false;
-					Log.error("Sending fancy message did not work, falling back to plain messages. Message key:", key, ", error:", ExceptionUtils.getStackTrace(e));
 				}
-			}
-			if(sendPlain) { // Fancy messages disabled or broken
-				((Player)target).sendMessage(ConsoleGenerator.generate(YamlParser.parse(message)));
-			}
-		} else {
-			String plainMessage = ConsoleGenerator.generate(YamlParser.parse(message));
+				if(sendPlain) { // Fancy messages disabled or broken
+					((Player)target).sendMessage(ConsoleGenerator.generate(YamlParser.parse(message)));
+				}
 
-			// Send to the target
-			if(target instanceof CommandSender) {
-				// Strip colors if disabled
-				if(!useColorsInConsole) {
-					plainMessage = ChatColor.stripColor(plainMessage);
-				}
-				((CommandSender)target).sendMessage(plainMessage);
-			} else if(target instanceof Logger) {
-				((Logger)target).info(ChatColor.stripColor(plainMessage));
-			} else if(target instanceof BufferedWriter) {
-				try {
-					((BufferedWriter)target).write(ChatColor.stripColor(plainMessage));
-					((BufferedWriter)target).newLine();
-				} catch(IOException e) {
-					Log.warn("Exception while writing to BufferedWriter:", ExceptionUtils.getStackTrace(e));
-				}
-			} else {
-				Log.warn("Could not send message (key: " + key + ") because the target (" + target.getClass().getName() + ") is not recognized, message: " + plainMessage);
+			}
+//			else if(target instanceof CommandSender) {
+//				plainMessage = ConsoleGenerator.generate(YamlParser.parse(message));
+//				// Strip colors if disabled
+//				if(!useColorsInConsole) {
+//					plainMessage = ChatColor.stripColor(plainMessage);
+//				}
+//				((CommandSender)target).sendMessage(plainMessage);
+//			}
+		}else{
+		 	if(target instanceof ProxiedPlayer){
+				((ProxiedPlayer)target).sendMessage(BaseMessageGenerator.generate(YamlParser.parse(message)));
 			}
 		}
+		plainMessage = ConsoleGenerator.generate(YamlParser.parse(message));
+
+		if(target instanceof Logger) {
+			((Logger)target).info(ChatColor.stripColor(plainMessage));
+		} else if(target instanceof BufferedWriter) {
+			try {
+				((BufferedWriter)target).write(ChatColor.stripColor(plainMessage));
+				((BufferedWriter)target).newLine();
+			} catch(IOException e) {
+				Log.warn("Exception while writing to BufferedWriter:", ExceptionUtils.getStackTrace(e));
+			}
+		}else {
+			Log.warn("Could not send message (key: " + key + ") because the target (" + target.getClass().getName() + ") is not recognized, message: " + plainMessage);
+		}
+
 		return this;
 	}
 

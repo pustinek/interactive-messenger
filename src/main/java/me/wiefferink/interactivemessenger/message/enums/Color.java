@@ -16,5 +16,6 @@ public enum Color {
 	YELLOW,
 	GOLD,
 	GRAY,
-	DARK_GRAY
+	DARK_GRAY,
+	HEX
 }
