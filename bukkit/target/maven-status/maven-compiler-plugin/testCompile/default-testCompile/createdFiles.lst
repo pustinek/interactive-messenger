@@ -1,0 +1,9 @@
+me\pustinek\interactivemessenger\bukkit\testing\unit\TestYAMLMessageProvider.class
+me\pustinek\interactivemessenger\bukkit\testing\unit\TestMessage.class
+me\pustinek\interactivemessenger\bukkit\testing\RunTests.class
+me\pustinek\interactivemessenger\bukkit\testing\unit\TestConsoleGenerator.class
+me\pustinek\interactivemessenger\bukkit\testing\parsergenerator\ParserGeneratorTestCase.class
+me\pustinek\interactivemessenger\bukkit\testing\parsergenerator\ParserGeneratorTestSuite.class
+me\pustinek\interactivemessenger\bukkit\testing\parsergenerator\ParserGeneratorTestInput.class
+me\pustinek\interactivemessenger\bukkit\source\YAMLMessageProvider.class
+me\pustinek\interactivemessenger\bukkit\testing\unit\TestTellrawGenerator.class

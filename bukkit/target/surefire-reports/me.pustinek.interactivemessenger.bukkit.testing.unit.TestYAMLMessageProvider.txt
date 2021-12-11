@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: me.pustinek.interactivemessenger.bukkit.testing.unit.TestYAMLMessageProvider
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec <<< FAILURE! - in me.pustinek.interactivemessenger.bukkit.testing.unit.TestYAMLMessageProvider
+me.pustinek.interactivemessenger.bukkit.testing.unit.TestYAMLMessageProvider  Time elapsed: 0.002 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: Resource file messages.yml not found in the jar
+	at me.pustinek.interactivemessenger.bukkit.testing.unit.TestYAMLMessageProvider.initMessage(TestYAMLMessageProvider.java:21)
+

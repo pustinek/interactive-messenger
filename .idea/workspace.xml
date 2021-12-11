@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c8aaf147-bc3a-4218-aa00-a8b480b819bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bukkit/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/generators/ConsoleGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bungee/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/generators/Generator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/enums/Click.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/enums/Control.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/processing/IMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Specifications &amp; Guidelines.md" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/Specifications &amp; Guidelines.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/generators/BaseMessageGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/generators/BaseMessageGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/generators/ConsoleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/generators/ConsoleGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/generators/TellrawGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/generators/TellrawGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/message/InteractiveMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/InteractiveMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/message/InteractiveMessagePart.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/InteractiveMessagePart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/message/TextMessagePart.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/TextMessagePart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/message/enums/Click.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/message/enums/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/enums/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/message/enums/Control.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/message/enums/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/enums/Format.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/message/enums/Hover.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/enums/Hover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/parsers/YamlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/parsers/YamlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/processing/Limit.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/processing/Limit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/processing/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/processing/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/processing/Replacement.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/processing/Replacement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/processing/ReplacementLimitReachedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/processing/ReplacementLimitReachedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/processing/ReplacementProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/processing/ReplacementProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/source/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/source/LanguageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/source/MessageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/source/MessageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/wiefferink/interactivemessenger/translation/Transifex.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/translation/Transifex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/source/YAMLMessageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/source/YAMLMessageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/RunTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/RunTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/ingame/IngameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/ingame/IngameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/ingame/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/ingame/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/ingame/TestRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/ingame/TestRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/parsergenerator/ParserGeneratorTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/parsergenerator/ParserGeneratorTestInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/parsergenerator/ParserGeneratorTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/unit/TestConsoleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestConsoleGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/unit/TestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/unit/TestTellrawGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestTellrawGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/wiefferink/interactivemessenger/testing/unit/TestYAMLMessageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestYAMLMessageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/break/newlineIgnoreAfter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/break/newlineIgnoreAfter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/break/newlineSimple.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/break/newlineSimple.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/break/tagIgnoreAfter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/break/tagIgnoreAfter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/break/tagSimple.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/break/tagSimple.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/bugs/bug1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/bugs/bug1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/legacyAllAnd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/legacyAllAnd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/legacyAllSection.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/legacyAllSection.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/legacyMultiple.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/legacyMultiple.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/legacyOneInFront.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/legacyOneInFront.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/legacyOneInMiddle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/legacyOneInMiddle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/tagAll.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/tagAll.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/tagCapitalisation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/tagCapitalisation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/tagMultiple.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/tagMultiple.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/tagOneInFront.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/tagOneInFront.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/color/tagOneInMiddle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/color/tagOneInMiddle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/encoding/utf8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/encoding/utf8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/escape/backslashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/escape/backslashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/escape/break.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/escape/break.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/escape/legacyColor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/escape/legacyColor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/escape/legacyFormatting.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/escape/legacyFormatting.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/escape/reset.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/escape/reset.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/escape/tagColor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/escape/tagColor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/escape/tagFormatting.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/escape/tagFormatting.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/formatting/legacyAllAnd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/formatting/legacyAllAnd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/formatting/legacyAllSection.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/formatting/legacyAllSection.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/formatting/resetToWhite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/formatting/resetToWhite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/formatting/tagAll.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/formatting/tagAll.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/formatting/tagCapitalisation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/formatting/tagCapitalisation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/complicatedText.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/complicatedText.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/formatting.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/formatting.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/indents.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/indents.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/multipleHovers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/multipleHovers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/multipleLines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/multipleLines.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/multipleLinesBreak.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/multipleLinesBreak.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/multipleLinesNewline.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/multipleLinesNewline.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/noHover.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/noHover.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/hover/simple.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/hover/simple.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/reset/legacyAnd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/reset/legacyAnd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/reset/legacySection.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/reset/legacySection.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/reset/tag.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/reset/tag.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/simple/onePart.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/simple/onePart.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parsergenerator/simple/twoParts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/parsergenerator/simple/twoParts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/processing/messages.yml" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/resources/processing/messages.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/source/LanguageManager.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/source/YAMLMessageProvider.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/common/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bukkit/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/RunTests.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bukkit/src/test/resources/processing/messages.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bungee/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestMessage.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestCase.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestSuite.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="228W35UDILC3LCPzGbAPJYbm3iK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15820312" />
+    <property name="project.structure.side.proportion" value="0.22808988" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="me.pustinek.interactivemessenger.common.message.enums" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pustinek\projekti\minecraft_plugins\clones\InteractiveMessenger" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="me.pustinek.interactivemessenger.bukkit.source" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.pustinek.interactivemessenger.bungee.generators" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8aaf147-bc3a-4218-aa00-a8b480b819bc" name="Changes" comment="" />
+      <created>1639219493338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639219493338</updated>
+    </task>
+    <servers />
+  </component>
+</project>
