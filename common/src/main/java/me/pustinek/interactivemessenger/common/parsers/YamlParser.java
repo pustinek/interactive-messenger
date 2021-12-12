@@ -1,10 +1,10 @@
-package me.pustinek.interactivemessenger.bukkit.parsers;
+package me.pustinek.interactivemessenger.common.parsers;
 
 import me.pustinek.interactivemessenger.common.message.InteractiveMessage;
 import me.pustinek.interactivemessenger.common.message.InteractiveMessagePart;
 import me.pustinek.interactivemessenger.common.message.enums.Click;
 import me.pustinek.interactivemessenger.common.message.enums.Color;
-import me.pustinek.interactivemessenger.bukkit.generators.ConsoleGenerator;
+import me.pustinek.interactivemessenger.common.generators.ConsoleGenerator;
 import me.pustinek.interactivemessenger.common.message.TextMessagePart;
 import me.pustinek.interactivemessenger.common.message.enums.Control;
 import me.pustinek.interactivemessenger.common.message.enums.Format;
@@ -22,7 +22,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class YamlParser {
-	public static final char COLOR_CHAR = '&';
+	public static final char COLOR_CHAR = '§';
 	public static final char ESCAPE_CHAR = '\\';
 	public static final char SIMPLE_FORMAT_RESET_CHAR = 'r';
     public static final Pattern tagPattern = Pattern.compile("(\\[[/a-zA-Z1-9_]+?])|([&" + Pattern.quote(COLOR_CHAR + "") + "][0-9a-zA-Z])|\\[#([0-9a-fA-F]{6})]|(\\\\n)");

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="me.pustinek.interactivemessenger.bukkit.testing.RunTests" time="0.017" tests="0" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="me.pustinek.interactivemessenger.bukkit.testing.RunTests" time="0.47" tests="43" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2021.2.3"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -29,7 +29,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\plugins\maven\lib\maven-event-listener.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\jbr\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\AdoptOpenJDK\jdk-16.0.1.9-hotspot\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\cmder;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Users\pustinek\AppData\Local\Programs\Python\Python37-32;C:\Users\pustinek\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Program Files\mosquitto;C:\Program Files\WorldPainter;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\php-7.4;C:\Users\pustinek\wp-cli;C:\Program Files\Go\bin;C:\Ruby26-x64\bin;C:\Users\pustinek\AppData\Local\Microsoft\WindowsApps;C:\Users\pustinek\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.2\bin;C:\Program Files\JetBrains\PyCharm 2019.2\bin;C:\Users\pustinek\AppData\Local\hyper\app-3.0.2\resources\bin;C:\src\flutter\bin;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\bin;C:\Users\pustinek\AppData\Local\GitHubDesktop\bin;C:\Users\pustinek\FCIV;C:\Users\pustinek\AppData\Roaming\npm;C:\Users\pustinek\go\bin;."/>
+    <property name="java.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\jbr\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\AdoptOpenJDK\jdk-16.0.1.9-hotspot\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\cmder;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Users\pustinek\AppData\Local\Programs\Python\Python37-32;C:\Users\pustinek\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Program Files\mosquitto;C:\Program Files\WorldPainter;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\php-7.4;C:\Users\pustinek\wp-cli;C:\Program Files\Go\bin;C:\Ruby26-x64\bin;C:\Users\pustinek\AppData\Local\Microsoft\WindowsApps;C:\Users\pustinek\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.2\bin;;C:\Program Files\JetBrains\PyCharm 2019.2\bin;;C:\Users\pustinek\AppData\Local\hyper\app-3.0.2\resources\bin;C:\src\flutter\bin;C:\Program Files\MongoDB\Server\4.2\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\bin;;C:\Users\pustinek\AppData\Local\GitHubDesktop\bin;C:\Users\pustinek\FCIV;C:\Users\pustinek\AppData\Roaming\npm;C:\Users\pustinek\go\bin;."/>
     <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\plugins\maven\lib\maven3/conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="55.0"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2021.2.3 --update-snapshots package"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2021.2.3 --update-snapshots test -P github"/>
     <property name="java.home" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.1.1\jbr"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -63,4 +63,47 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+  <testcase name="newlineIgnoreAfter" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.055"/>
+  <testcase name="newlineSimple" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.003"/>
+  <testcase name="tagIgnoreAfter" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.004"/>
+  <testcase name="tagSimple" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.004"/>
+  <testcase name="bug1" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.015"/>
+  <testcase name="hex" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.064"/>
+  <testcase name="legacyAllAnd" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.018"/>
+  <testcase name="legacyAllAnd" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.005"/>
+  <testcase name="legacyAllSection" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.017"/>
+  <testcase name="legacyAllSection" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.005"/>
+  <testcase name="legacyMultiple" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.005"/>
+  <testcase name="legacyOneInFront" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.003"/>
+  <testcase name="legacyOneInMiddle" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.004"/>
+  <testcase name="tagAll" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.028"/>
+  <testcase name="tagAll" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.019"/>
+  <testcase name="tagCapitalisation" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.005"/>
+  <testcase name="tagCapitalisation" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.006"/>
+  <testcase name="tagMultiple" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.003"/>
+  <testcase name="tagOneInFront" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.002"/>
+  <testcase name="tagOneInMiddle" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.004"/>
+  <testcase name="utf8" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.005"/>
+  <testcase name="backslashes" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.006"/>
+  <testcase name="break" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.002"/>
+  <testcase name="legacyColor" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.002"/>
+  <testcase name="legacyFormatting" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.003"/>
+  <testcase name="reset" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.002"/>
+  <testcase name="tagColor" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.003"/>
+  <testcase name="tagFormatting" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.002"/>
+  <testcase name="resetToWhite" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.004"/>
+  <testcase name="complicatedText" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.005"/>
+  <testcase name="formatting" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.005"/>
+  <testcase name="indents" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.008"/>
+  <testcase name="multipleHovers" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.003"/>
+  <testcase name="multipleLines" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.004"/>
+  <testcase name="multipleLinesBreak" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.003"/>
+  <testcase name="multipleLinesNewline" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.004"/>
+  <testcase name="noHover" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.001"/>
+  <testcase name="simple" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.002"/>
+  <testcase name="legacyAnd" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.009"/>
+  <testcase name="legacySection" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.009"/>
+  <testcase name="tag" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.01"/>
+  <testcase name="onePart" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.001"/>
+  <testcase name="twoParts" classname="me.pustinek.interactivemessenger.bukkit.testing.parsergenerator.ParserGeneratorTestCase" time="0.002"/>
 </testsuite>

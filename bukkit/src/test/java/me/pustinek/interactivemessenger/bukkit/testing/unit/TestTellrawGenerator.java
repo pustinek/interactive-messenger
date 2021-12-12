@@ -2,7 +2,7 @@ package me.pustinek.interactivemessenger.bukkit.testing.unit;
 
 import me.pustinek.interactivemessenger.common.message.InteractiveMessage;
 import me.pustinek.interactivemessenger.bukkit.generators.TellrawGenerator;
-import me.pustinek.interactivemessenger.bukkit.parsers.YamlParser;
+import me.pustinek.interactivemessenger.common.parsers.YamlParser;
 import org.junit.Test;
 
 import java.util.Arrays;

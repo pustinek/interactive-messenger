@@ -2,8 +2,8 @@ package me.pustinek.interactivemessenger.bukkit.processing;
 
 
 import me.pustinek.interactivemessenger.bukkit.generators.TellrawGenerator;
-import me.pustinek.interactivemessenger.bukkit.generators.ConsoleGenerator;
-import me.pustinek.interactivemessenger.bukkit.parsers.YamlParser;
+import me.pustinek.interactivemessenger.common.generators.ConsoleGenerator;
+import me.pustinek.interactivemessenger.common.parsers.YamlParser;
 import me.pustinek.interactivemessenger.common.source.MessageProvider;
 
 import me.pustinek.interactivemessenger.common.Log;
@@ -29,12 +29,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Message implements IMessage {
-
-	// CONFIGURATION
-	private static boolean useInteractiveMessages = true;
-	private static boolean useColorsInConsole = false;
-	private static MessageProvider messageProvider = null;
-
 	// Define the symbols used for variables
 	public static final String VARIABLE_START = "%";
 	public static final String VARIABLE_END = "%";
@@ -46,6 +40,20 @@ public class Message implements IMessage {
 					"(\\|(.*?\\|)+?)?"+                                // Optional message arguments
 					Pattern.quote(VARIABLE_END)
 	);
+
+	// Language variable used to insert a prefix
+	public static final String CHATLANGUAGEVARIABLE = "prefix";
+	// Maximum number of replacement rounds (the replaced value can have variables again)
+	public static final int REPLACEMENTLIMIT = 200;
+	// Limit of the client is 32767 for the complete message
+	public static final int MAXIMUMJSONLENGTH = 30000;
+	// CONFIGURATION
+	private static boolean useInteractiveMessages = true;
+	private static boolean useColorsInConsole = false;
+	private static MessageProvider messageProvider = null;
+
+	// If sending a fancy message does not work we disable it for this run of the server
+	private static boolean fancyWorks = true;
 
 	private static HashMap<Integer, Pattern> indexPatterns = new HashMap<>();
 
@@ -62,14 +70,7 @@ public class Message implements IMessage {
 		}
 		return result;
 	}
-	// Language variable used to insert a prefix
-	public static final String CHATLANGUAGEVARIABLE = "prefix";
-	// Maximum number of replacement rounds (the replaced value can have variables again)
-	public static final int REPLACEMENTLIMIT = 200;
-	// Limit of the client is 32767 for the complete message
-	public static final int MAXIMUMJSONLENGTH = 30000;
-	// If sending a fancy message does not work we disable it for this run of the server
-	private static boolean fancyWorks = true;
+
 
 	// INSTANCE VARIABLES
 	private List<String> message;
@@ -345,56 +346,52 @@ public class Message implements IMessage {
 			return this;
 		}
 		doReplacements();
-		String plainMessage;
-
-			if(target instanceof Player) {
-				boolean sendPlain = true;
-				if(useInteractiveMessages && fancyWorks) {
-					try {
-						boolean result = true;
-						List<String> jsonMessages = TellrawGenerator.generate(YamlParser.parse(message));
-						for(String jsonMessage : jsonMessages) {
-							if(jsonMessage.length() > MAXIMUMJSONLENGTH) {
-								Log.error("Message with key", key, "could not be send, results in a JSON string that is too big to send to the client, start of the message:", getMessageStart(this, 200));
-								return this;
-							}
-							result &= Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw "+((Player)target).getName()+" "+jsonMessage);
+		if(target instanceof Player) {
+			boolean sendPlain = true;
+			if(useInteractiveMessages && fancyWorks) {
+				try {
+					boolean result = true;
+					List<String> jsonMessages = TellrawGenerator.generate(YamlParser.parse(message));
+					for(String jsonMessage : jsonMessages) {
+						if(jsonMessage.length() > MAXIMUMJSONLENGTH) {
+							Log.error("Message with key", key, "could not be send, results in a JSON string that is too big to send to the client, start of the message:", getMessageStart(this, 200));
+							return this;
 						}
-						sendPlain = !result;
-						fancyWorks = result;
-					} catch(Exception e) {
-						fancyWorks = false;
-						Log.error("Sending fancy message did not work, falling back to plain messages. Message key:", key, ", error:", ExceptionUtils.getStackTrace(e));
+						result &= Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw "+((Player)target).getName()+" "+jsonMessage);
 					}
+					sendPlain = !result;
+					fancyWorks = result;
+				} catch(Exception e) {
+					fancyWorks = false;
+					Log.error("Sending fancy message did not work, falling back to plain messages. Message key:", key, ", error:", ExceptionUtils.getStackTrace(e));
 				}
-				if(sendPlain) { // Fancy messages disabled or broken
-					((Player)target).sendMessage(ConsoleGenerator.generate(YamlParser.parse(message)));
-				}
-
 			}
-			else if(target instanceof CommandSender) {
-				plainMessage = ConsoleGenerator.generate(YamlParser.parse(message));
+			if(sendPlain) { // Fancy messages disabled or broken
+				((Player)target).sendMessage(ConsoleGenerator.generate(YamlParser.parse(message)));
+			}
+		} else {
+			String plainMessage = ConsoleGenerator.generate(YamlParser.parse(message));
+
+			// Send to the target
+			if(target instanceof CommandSender) {
 				// Strip colors if disabled
 				if(!useColorsInConsole) {
 					plainMessage = ChatColor.stripColor(plainMessage);
 				}
 				((CommandSender)target).sendMessage(plainMessage);
+			} else if(target instanceof Logger) {
+				((Logger)target).info(ChatColor.stripColor(plainMessage));
+			} else if(target instanceof BufferedWriter) {
+				try {
+					((BufferedWriter)target).write(ChatColor.stripColor(plainMessage));
+					((BufferedWriter)target).newLine();
+				} catch(IOException e) {
+					Log.warn("Exception while writing to BufferedWriter:", ExceptionUtils.getStackTrace(e));
+				}
+			} else {
+				Log.warn("Could not send message (key: " + key + ") because the target (" + target.getClass().getName() + ") is not recognized, message: " + plainMessage);
 			}
-		plainMessage = ConsoleGenerator.generate(YamlParser.parse(message));
-
-		if(target instanceof Logger) {
-			((Logger)target).info(ChatColor.stripColor(plainMessage));
-		} else if(target instanceof BufferedWriter) {
-			try {
-				((BufferedWriter)target).write(ChatColor.stripColor(plainMessage));
-				((BufferedWriter)target).newLine();
-			} catch(IOException e) {
-				Log.warn("Exception while writing to BufferedWriter:", ExceptionUtils.getStackTrace(e));
-			}
-		}else {
-			Log.warn("Could not send message (key: " + key + ") because the target (" + target.getClass().getName() + ") is not recognized, message: " + plainMessage);
 		}
-
 		return this;
 	}
 

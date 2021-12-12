@@ -2,9 +2,9 @@ package me.pustinek.interactivemessenger.bukkit.generators;
 
 import me.pustinek.interactivemessenger.common.message.InteractiveMessage;
 import me.pustinek.interactivemessenger.common.message.InteractiveMessagePart;
+import me.pustinek.interactivemessenger.common.message.TextMessagePart;
 import me.pustinek.interactivemessenger.common.message.enums.Click;
 import me.pustinek.interactivemessenger.common.message.enums.Color;
-import me.pustinek.interactivemessenger.common.message.TextMessagePart;
 import me.pustinek.interactivemessenger.common.message.enums.Format;
 import me.pustinek.interactivemessenger.common.message.enums.Hover;
 

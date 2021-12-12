@@ -8,9 +8,9 @@ import junit.framework.TestCase;
 import me.pustinek.interactivemessenger.common.Log;
 import me.pustinek.interactivemessenger.common.message.InteractiveMessage;
 
-import me.pustinek.interactivemessenger.bukkit.generators.ConsoleGenerator;
+import me.pustinek.interactivemessenger.common.generators.ConsoleGenerator;
 import me.pustinek.interactivemessenger.bukkit.generators.TellrawGenerator;
-import me.pustinek.interactivemessenger.bukkit.parsers.YamlParser;
+import me.pustinek.interactivemessenger.common.parsers.YamlParser;
 import me.pustinek.interactivemessenger.bukkit.testing.RunTests;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;

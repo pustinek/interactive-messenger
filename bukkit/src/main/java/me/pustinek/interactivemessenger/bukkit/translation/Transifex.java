@@ -1,7 +1,7 @@
 package me.pustinek.interactivemessenger.bukkit.translation;
 
 
-import me.pustinek.interactivemessenger.bukkit.parsers.YamlParser;
+import me.pustinek.interactivemessenger.common.parsers.YamlParser;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.bukkit.configuration.file.YamlConfiguration;

@@ -3,6 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <name>InteractiveMessenger-Bungee</name>
+
     <dependencies>
         <dependency>
             <groupId>me.pustinek</groupId>
@@ -16,6 +18,11 @@
             <version>1.16-R0.5-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.16-R0.5-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 
@@ -24,12 +31,24 @@
         <groupId>me.pustinek</groupId>
         <version>1.0</version>
     </parent>
-    <artifactId>bungee</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>interactivemessenger-bungee</artifactId>
+    <version>${bungee-version}</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.deploy.skip>false</maven.deploy.skip>
     </properties>
+
+    <build>
+        <directory>target</directory>
+        <finalName>${project.name}-${bungee-version}</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

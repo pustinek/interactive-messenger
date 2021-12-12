@@ -30,7 +30,7 @@ public class TestMessage {
 
 	@BeforeClass
 	public static void initMessage() {
-		URL resource = TestMessage.class.getClassLoader().getResource("src/test/resources/processing/messages.yml");
+		URL resource = TestMessage.class.getClassLoader().getResource("processing/messages.yml");
 		assertNotNull("Resource file messages.yml not found in the jar", resource);
 		MessageProvider provider = new YAMLMessageProvider(new File(resource.getFile()));
 		Message.init(provider, null);

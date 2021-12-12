@@ -1,15 +1,7 @@
 me\pustinek\interactivemessenger\bukkit\source\LanguageManager.class
-me\pustinek\interactivemessenger\bukkit\parsers\YamlParser$TaggedContent.class
-me\pustinek\interactivemessenger\bukkit\generators\TellrawGenerator$3.class
-me\pustinek\interactivemessenger\bukkit\generators\ConsoleGenerator$1.class
-me\pustinek\interactivemessenger\bukkit\generators\TellrawGenerator.class
-me\pustinek\interactivemessenger\bukkit\parsers\YamlParser$1.class
-me\pustinek\interactivemessenger\bukkit\generators\ConsoleGenerator$2.class
-me\pustinek\interactivemessenger\bukkit\generators\ConsoleGenerator.class
 me\pustinek\interactivemessenger\bukkit\generators\TellrawGenerator$1.class
 me\pustinek\interactivemessenger\bukkit\translation\Transifex.class
-me\pustinek\interactivemessenger\bukkit\parsers\YamlParser$2.class
+me\pustinek\interactivemessenger\bukkit\generators\TellrawGenerator$3.class
 me\pustinek\interactivemessenger\bukkit\processing\Message.class
-me\pustinek\interactivemessenger\bukkit\parsers\YamlParser.class
-me\pustinek\interactivemessenger\bukkit\parsers\YamlParser$3.class
+me\pustinek\interactivemessenger\bukkit\generators\TellrawGenerator.class
 me\pustinek\interactivemessenger\bukkit\generators\TellrawGenerator$2.class

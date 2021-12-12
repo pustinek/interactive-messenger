@@ -1,35 +1,27 @@
-package me.pustinek.interactivemessenger.bukkit.source;
+package me.pustinek.interactivemessenger.bungee.source;
 
 import com.google.common.base.Charsets;
-import me.pustinek.interactivemessenger.bukkit.processing.Message;
-import me.pustinek.interactivemessenger.bukkit.translation.Transifex;
+
+import me.pustinek.interactivemessenger.bungee.processing.Message;
 import me.pustinek.interactivemessenger.common.Log;
 import me.pustinek.interactivemessenger.common.processing.IMessage;
 import me.pustinek.interactivemessenger.common.source.Manager;
 import me.pustinek.interactivemessenger.common.source.MessageProvider;
+import net.md_5.bungee.config.Configuration;
+import net.md_5.bungee.config.ConfigurationProvider;
+import net.md_5.bungee.config.YamlConfiguration;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
+import net.md_5.bungee.api.plugin.Plugin;
+
 
 public class LanguageManager extends Manager implements MessageProvider {
-	private JavaPlugin plugin;
+	private Plugin plugin;
 	private Map<String, List<String>> currentLanguage, defaultLanguage;
 	private File languageFolder;
 	private String jarLanguagePath;
@@ -43,7 +35,7 @@ public class LanguageManager extends Manager implements MessageProvider {
 	 * @param defaultLanguageName The name of the language that
 	 * @param chatPrefix The chat prefix for Message#prefix()
 	 */
-	public LanguageManager(JavaPlugin plugin, String jarLanguagePath, String currentLanguageName, String defaultLanguageName, List<String> chatPrefix) {
+	public LanguageManager(Plugin plugin, String jarLanguagePath, String currentLanguageName, String defaultLanguageName, List<String> chatPrefix) {
 		this.plugin = plugin;
 		this.jarLanguagePath = jarLanguagePath;
 		this.chatPrefix = chatPrefix;
@@ -132,8 +124,10 @@ public class LanguageManager extends Manager implements MessageProvider {
 				InputStreamReader reader = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8)
 		) {
 			// Detect empty language files, happens when the YAML parsers prints an exception (it does return an empty YamlConfiguration though)
-			YamlConfiguration ymlFile = YamlConfiguration.loadConfiguration(reader);
-			if(ymlFile.getKeys(false).isEmpty()) {
+			ConfigurationProvider provider = ConfigurationProvider.getProvider(YamlConfiguration.class);
+			Configuration cfg = provider.load(reader);
+
+			if(cfg.getKeys().isEmpty()) {
 				Log.warn("Language file " + key + ".yml has zero messages.");
 				return result;
 			}

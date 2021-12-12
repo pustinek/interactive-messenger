@@ -8,11 +8,16 @@
     <common-version>1.0.0</common-version>
     <bungee-version>1.0.0</bungee-version>
     <bukkit-version>1.0.0</bukkit-version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.deploy.skip>true</maven.deploy.skip>
   </properties>
+
 
   <groupId>me.pustinek</groupId>
   <artifactId>interactivemessenger-parent</artifactId>
   <version>1.0</version>
+
 
   <packaging>pom</packaging>
   <name>InteractiveMessenger</name>
@@ -28,19 +33,12 @@
     <module>bukkit</module>
     <module>bungee</module>
   </modules>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 
-
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>InteractiveMessenger</name>
+      <url>https://maven.pkg.github.com/pustinek/InteractiveMessenger</url>
+    </repository>
+  </distributionManagement>
 </project>

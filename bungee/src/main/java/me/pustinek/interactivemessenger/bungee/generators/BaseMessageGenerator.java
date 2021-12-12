@@ -8,10 +8,7 @@ import me.pustinek.interactivemessenger.common.message.enums.Color;
 import me.pustinek.interactivemessenger.common.message.enums.Format;
 import me.pustinek.interactivemessenger.common.message.enums.Hover;
 import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.chat.*;
 
 import java.util.EnumMap;
 import java.util.EnumSet;
@@ -117,11 +114,13 @@ public class BaseMessageGenerator {
             }
             //TODO: create interactive part
             if(interactivePart.getOnClick() != null){
-
+                ClickEvent clickEvent = new ClickEvent(clickKey.get(interactivePart.getOnClick()), interactivePart.getOnClickContent());
+                textComponent.setClickEvent(clickEvent);
             }
 
             if(interactivePart.getOnHover() != null){
-
+                HoverEvent hoverEvent = new HoverEvent(hoverKey.get(interactivePart.getOnHover()), new ComponentBuilder(String.valueOf(interactivePart.getOnHoverContent())).create());
+                textComponent.setHoverEvent(hoverEvent);
             }
 
             // Add newlines

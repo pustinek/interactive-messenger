@@ -1,17 +1,39 @@
-package me.pustinek.interactivemessenger.bukkit.generators;
+package me.pustinek.interactivemessenger.common.generators;
 
 import me.pustinek.interactivemessenger.common.message.InteractiveMessage;
 import me.pustinek.interactivemessenger.common.message.InteractiveMessagePart;
 import me.pustinek.interactivemessenger.common.message.TextMessagePart;
 import me.pustinek.interactivemessenger.common.message.enums.Color;
 import me.pustinek.interactivemessenger.common.message.enums.Format;
-import net.md_5.bungee.api.ChatColor;
 
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 public class ConsoleGenerator {
+	private static final Pattern REPLACE_ALL_RGB_PATTERN = Pattern.compile("(&)?&#([0-9a-fA-F]{6})");
+
+	/**
+	 * @throws NumberFormatException If the provided hex color code is invalid or if version is lower than 1.16.
+	 */
+	public static String parseHexColor(String hexColor) throws NumberFormatException {
+
+		if (hexColor.startsWith("#")) {
+			hexColor = hexColor.substring(1); //fuck you im reassigning this.
+		}
+		if (hexColor.length() != 6) {
+			throw new NumberFormatException("Invalid hex length");
+		}
+		java.awt.Color.decode("#" + hexColor);
+		StringBuilder assembledColorCode = new StringBuilder();
+		assembledColorCode.append("\u00a7x");
+		for (char curChar : hexColor.toCharArray()) {
+			assembledColorCode.append("\u00a7").append(curChar);
+		}
+		return assembledColorCode.toString();
+	}
+
 
 	/**
 	 * Map Color to the native formatting codes used in chat (https://minecraft.gamepedia.com/Formatting_codes)
@@ -44,7 +66,10 @@ public class ConsoleGenerator {
 		put(Format.UNDERLINE, 'n');
 		put(Format.STRIKETHROUGH, 's');
 		put(Format.OBFUSCATE, 'k');
+		put(Format.RESET, 'r');
 	}};
+
+	private static final char COLOR_CHAR = '§';
 
 	/**
 	 * Parses the given message to a String containing control characters
@@ -59,12 +84,13 @@ public class ConsoleGenerator {
 	public static String generate(InteractiveMessage message) {
 		StringBuilder result = new StringBuilder();
 		Color activeColor = Color.WHITE;
+
 		Set<Format> activeFormatting = EnumSet.noneOf(Format.class);
 		for(InteractiveMessagePart interactivePart : message) {
 			for(TextMessagePart textPart : interactivePart) {
 				// Use reset if there is formatting active we need to get rid of
 				if(!textPart.getFormatting().containsAll(activeFormatting)) {
-					result.append(ChatColor.RESET);
+					result.append(COLOR_CHAR).append(formatCode.get(Format.RESET));
 					activeColor = Color.WHITE;
 					activeFormatting.clear();
 				}
@@ -73,9 +99,9 @@ public class ConsoleGenerator {
 				if(activeColor != textPart.getColor()) {
 
 					if(textPart.getColor() == Color.HEX){
-						result.append(ChatColor.of(textPart.getHexColor()));
+						result.append(parseHexColor(textPart.getHexColor()));
 					}else{
-						result.append(ChatColor.COLOR_CHAR).append(colorCode.get(textPart.getColor()));
+						result.append(COLOR_CHAR).append(colorCode.get(textPart.getColor()));
 					}
 
 
@@ -87,7 +113,7 @@ public class ConsoleGenerator {
 				formattingToAdd.addAll(textPart.getFormatting());
 				formattingToAdd.removeAll(activeFormatting);
 				for(Format format : formattingToAdd) {
-					result.append(ChatColor.COLOR_CHAR).append(formatCode.get(format));
+					result.append(COLOR_CHAR).append(formatCode.get(format));
 					activeFormatting.add(format);
 				}
 

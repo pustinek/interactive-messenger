@@ -17,7 +17,7 @@ public class TestYAMLMessageProvider {
 
 	@BeforeClass
 	public static void initMessage() {
-		URL resource = TestYAMLMessageProvider.class.getClassLoader().getResource("src/test/resources/processing/messages.yml");
+		URL resource = TestYAMLMessageProvider.class.getClassLoader().getResource("processing/messages.yml");
 		assertNotNull("Resource file messages.yml not found in the jar", resource);
 		provider = new YAMLMessageProvider(new File(resource.getFile()));
 	}

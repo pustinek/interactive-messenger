@@ -5,5 +5,6 @@ public enum Format {
 	ITALIC,
 	UNDERLINE,
 	STRIKETHROUGH,
-	OBFUSCATE
+	OBFUSCATE,
+	RESET
 }

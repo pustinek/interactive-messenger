@@ -2,18 +2,22 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>interactivemessenger-bukkit</artifactId>
-    <name>InteractiveMessengerBukkit</name>
-	<version>1.0</version>
+    <name>InteractiveMessenger-Bukkit</name>
+	<version>${bukkit-version}</version>
 
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<skipTests>false</skipTests>
+		<maven.deploy.skip>false</maven.deploy.skip>
+	</properties>
 	<parent>
 		<artifactId>interactivemessenger-parent</artifactId>
 		<groupId>me.pustinek</groupId>
 		<version>1.0</version>
 	</parent>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<skipTests>true</skipTests>
-	</properties>
+
 
 	<repositories>
 		<repository>
@@ -40,22 +44,6 @@
 			<artifactId>interactivemessenger-common</artifactId>
 			<version>1.0</version>
 			<scope>compile</scope>
-		</dependency>
-
-		<!-- Bungeecord API for new HEX color support -->
-		<dependency>
-			<groupId>net.md-5</groupId>
-			<artifactId>bungeecord-api</artifactId>
-			<version>1.16-R0.5-SNAPSHOT</version>
-			<type>jar</type>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.md-5</groupId>
-			<artifactId>bungeecord-api</artifactId>
-			<version>1.16-R0.5-SNAPSHOT</version>
-			<type>javadoc</type>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- Google Gson, only used for the tests -->
@@ -198,7 +186,7 @@
 
 	<build>
 		<directory>target</directory>
-		<finalName>${project.name}</finalName>
+		<finalName>${project.name}-${bukkit-version}</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -218,6 +206,7 @@
 					<argLine>-Dfile.encoding=UTF-8</argLine>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
