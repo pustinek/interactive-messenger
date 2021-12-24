@@ -5,74 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8aaf147-bc3a-4218-aa00-a8b480b819bc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/processing/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/source/LanguageManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/processing/AbstractMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/source/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/generators/ConsoleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/generators/ConsoleGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/generators/TellrawGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/generators/TellrawGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/parsers/YamlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/parsers/YamlParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/processing/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/processing/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/source/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/source/LanguageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/translation/Transifex.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/main/java/me/pustinek/interactivemessenger/bukkit/translation/Transifex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/RunTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/RunTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestConsoleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestConsoleGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestTellrawGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestTellrawGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestYAMLMessageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/src/test/java/me/pustinek/interactivemessenger/bukkit/testing/unit/TestYAMLMessageProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/InteractiveMessengerBukkit.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/generators/ConsoleGenerator$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/generators/ConsoleGenerator$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/generators/ConsoleGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/parsers/YamlParser$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/parsers/YamlParser$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/parsers/YamlParser$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/parsers/YamlParser$TaggedContent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/parsers/YamlParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/processing/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/processing/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/source/LanguageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/source/LanguageManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/translation/Transifex.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/classes/me/pustinek/interactivemessenger/bukkit/translation/Transifex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.RunTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.RunTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.unit.TestConsoleGenerator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.unit.TestConsoleGenerator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.unit.TestMessage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.unit.TestMessage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.unit.TestTellrawGenerator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.unit.TestTellrawGenerator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.unit.TestYAMLMessageProvider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/TEST-me.pustinek.interactivemessenger.bukkit.testing.unit.TestYAMLMessageProvider.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/me.pustinek.interactivemessenger.bukkit.testing.RunTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/me.pustinek.interactivemessenger.bukkit.testing.RunTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/me.pustinek.interactivemessenger.bukkit.testing.unit.TestConsoleGenerator.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/me.pustinek.interactivemessenger.bukkit.testing.unit.TestConsoleGenerator.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/me.pustinek.interactivemessenger.bukkit.testing.unit.TestMessage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/me.pustinek.interactivemessenger.bukkit.testing.unit.TestMessage.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/surefire-reports/me.pustinek.interactivemessenger.bukkit.testing.unit.TestYAMLMessageProvider.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/surefire-reports/me.pustinek.interactivemessenger.bukkit.testing.unit.TestYAMLMessageProvider.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/RunTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/RunTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/parsergenerator/ParserGeneratorTestCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/unit/TestConsoleGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/unit/TestConsoleGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/unit/TestMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/unit/TestMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/unit/TestTellrawGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/unit/TestTellrawGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/unit/TestYAMLMessageProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/bukkit/target/test-classes/me/pustinek/interactivemessenger/bukkit/testing/unit/TestYAMLMessageProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/generators/BaseMessageGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/generators/BaseMessageGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/generators/ConsoleGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/target/bungee-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/target/classes/me/pustinek/interactivemessenger/bungee/generators/ConsoleGenerator$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/target/classes/me/pustinek/interactivemessenger/bungee/generators/ConsoleGenerator$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/target/classes/me/pustinek/interactivemessenger/bungee/generators/ConsoleGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bungee/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/enums/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/message/enums/Format.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/processing/IMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/me/pustinek/interactivemessenger/common/processing/IMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/me/pustinek/interactivemessenger/common/message/enums/Format.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/me/pustinek/interactivemessenger/common/message/enums/Format.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/me/pustinek/interactivemessenger/common/processing/IMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/me/pustinek/interactivemessenger/common/processing/IMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/interactivemessenger-common-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/processing/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/processing/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/source/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/bungee/src/main/java/me/pustinek/interactivemessenger/bungee/source/LanguageManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,6 +98,18 @@
       <option name="presentableId" value="Default" />
       <updated>1639219493338</updated>
     </task>
+    <task id="LOCAL-00001" summary="bungee in-progress">
+      <created>1639348857581</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639348857581</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="bungee in-progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="bungee in-progress" />
   </component>
 </project>
