@@ -118,7 +118,6 @@ public class LanguageManager extends Manager implements MessageProvider {
 		Map<String, List<String>> result = new HashMap<>();
 
 		// Load the language file
-		boolean convertFromTransifex = false;
 		File file = new File(languageFolder.getAbsolutePath()+File.separator+key+".yml");
 		try(
 				InputStreamReader reader = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8)
@@ -132,29 +131,17 @@ public class LanguageManager extends Manager implements MessageProvider {
 				return result;
 			}
 
-			// Retrieve the messages from the YAML file and create the result
-			if(!convert || !Transifex.needsConversion(ymlFile)) {
-				for(String messageKey : ymlFile.getKeys(false)) {
-					if(ymlFile.isList(messageKey)) {
-						result.put(messageKey, new ArrayList<>(ymlFile.getStringList(messageKey)));
-					} else {
-						result.put(messageKey, new ArrayList<>(Collections.singletonList(ymlFile.getString(messageKey))));
-					}
+			for(String messageKey : cfg.getKeys()) {
+				if(!cfg.getStringList(messageKey).isEmpty()) {
+					result.put(messageKey, new ArrayList<>(cfg.getStringList(messageKey)));
+				} else {
+					result.put(messageKey, new ArrayList<>(Collections.singletonList(cfg.getString(messageKey))));
 				}
-			} else {
-				convertFromTransifex = true;
 			}
 		} catch(IOException e) {
 			Log.warn("Could not load language file: " + file.getAbsolutePath());
 		}
 
-		// Do conversion (after block above closed the reader)
-		if(convertFromTransifex) {
-			if(!Transifex.convertFrom(file)) {
-				Log.warn("Failed to convert " + file.getName() + " from the Transifex layout to the AreaShop layout, check the errors above");
-			}
-			return loadLanguage(key, false);
-		}
 
 		return result;
 	}

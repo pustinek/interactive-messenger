@@ -2,11 +2,16 @@ package me.pustinek.interactivemessenger.bungee.processing;
 
 
 
+import me.pustinek.interactivemessenger.bungee.generators.BaseMessageGenerator;
 import me.pustinek.interactivemessenger.common.generators.ConsoleGenerator;
 import me.pustinek.interactivemessenger.common.parsers.YamlParser;
 import me.pustinek.interactivemessenger.common.source.MessageProvider;
 
 import me.pustinek.interactivemessenger.common.Log;
+import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.CommandSender;
+import net.md_5.bungee.api.chat.BaseComponent;
+import net.md_5.bungee.api.connection.ProxiedPlayer;
 import org.apache.commons.lang.StringUtils;
 import me.pustinek.interactivemessenger.common.processing.IMessage;
 import me.pustinek.interactivemessenger.common.processing.Limit;
@@ -334,12 +339,25 @@ public class Message implements IMessage {
      * @return this
      */
     public Message send(Object target) {
-        if(message == null || message.size() == 0 || (message.size() == 1 && message.get(0).length() == 0) || target == null) {
+    if(message == null || message.size() == 0 || (message.size() == 1 && message.get(0).length() == 0) || target == null) {
             return this;
         }
         doReplacements();
-        // TODO: write the function to send to proxiedplayer, console, logger
+        // TODO: write the function to send to proxiedplayer
+        if(target instanceof ProxiedPlayer) {
 
+            BaseComponent generate = BaseMessageGenerator.generate(YamlParser.parse(message));
+            ((ProxiedPlayer) target).sendMessage(generate);
+        }else if(target instanceof CommandSender) {
+            BaseComponent generate = BaseMessageGenerator.generate(YamlParser.parse(message));
+            ((CommandSender) target).sendMessage(generate);
+        } else if(target instanceof Logger) {
+            String plainMessage = ConsoleGenerator.generate(YamlParser.parse(message));
+            ((Logger)target).info(ChatColor.stripColor(plainMessage));
+        }else{
+            String plainMessage = ConsoleGenerator.generate(YamlParser.parse(message));
+            Log.warn("Could not send message (key: " + key + ") because the target (" + target.getClass().getName() + ") is not recognized, message: " + plainMessage);
+        }
         return this;
     }
 
